@@ -139,29 +139,6 @@ def add_plugs():
     )
     EchoBot.add_handler(
         MessageHandler(
-            _p,
-            filters.command(BotCommands.PosterSearchCommand, case_sensitive=True)
-            & CustomFilters.authorized,
-        )
-    )
-
-    EchoBot.add_handler(
-        MessageHandler(
-            _anime,
-            filters.command(BotCommands.AnimeCommand, case_sensitive=True)
-            & CustomFilters.authorized,
-        )
-    )
-
-    EchoBot.add_handler(
-        CallbackQueryHandler(
-            _anime_cb,
-            filters.regex(r"^anime ") & CustomFilters.authorized,
-        )
-    )
-
-    EchoBot.add_handler(
-        MessageHandler(
             _olap_cmd,
             filters.command(BotCommands.OverlapCommand, case_sensitive=True)
             & CustomFilters.authorized,
