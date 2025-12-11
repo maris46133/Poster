@@ -1,0 +1,88 @@
+from pyrogram.types import BotCommand
+
+class BotCommands:
+    _static = {
+        "PosterSearch": ["poster", "p"],
+        "Start": ["start", "help"],
+        "Poster": [
+            "prime", "pv",
+            "zee5", "z5",
+            "appletv", "atv",
+            "airtel", "ax",
+            "sunnxt", "sn",
+            "aha", "ah",
+            "iqiyi", "iq",
+            "wetv", "wt",
+            "shemaroo", "sm",
+            "bms", "bm",
+            "plex", "px",
+            "adda", "ad",
+            "stage", "stg",
+            "netflix", "nf",
+            "youtube", "yt",
+            "instagram", "ig",
+            "facebook", "fb",
+            "tiktok", "tk",
+        ],
+        "Imdb": ["imdb", "md"],
+        "Anime": ["anime", "an"],
+        "Bypass": [
+            "gdflix", "gd",
+            "hubcloud", "hc",
+            "hubdrive", "hd",
+            "transfer_it", "ti",
+        ],
+        "Authorize": ["authorize", "a"],
+        "UnAuthorize": ["unauthorize", "ua"],
+        "Log": ["log", "lg"],
+        "Ping": ["ping", "pong"],
+        "Restart": ["restart", "r"],
+        "Broadcast": ["broadcast", "br"],
+        "Overlap": ["overlap"],
+    }
+
+    @classmethod
+    def build(cls):
+        for k, v in cls._static.items():
+            setattr(cls, f"{k}Command", v)
+BotCommands.build()
+
+CMD_HELP = {
+    "poster": "Scrape any movie/show poster",
+    "gdflix": "Bypass GDFlix links to direct links",
+    "hubcloud": "Bypass HubCloud links to direct links",
+    "hubdrive": "Bypass Hubdrive links to direct links",
+    "transfer_it": "Bypass Transfer.it links to direct links",
+    "imdb": "Search Movie/Series on IMDb",
+    "anime": "Search Anime on Anilist",
+    "prime": "Scrape Prime Video poster from URL",
+    "zee5": "Scrape ZEE5 poster from URL",
+    "appletv": "Scrape Apple TV+ poster from URL",
+    "airtel": "Scrape Airtel Xstream poster from URL",
+    "sunnxt": "Scrape Sun NXT poster from URL",
+    "aha": "Scrape Aha Video poster from URL",
+    "iqiyi": "Scrape iQIYI poster from URL",
+    "wetv": "Scrape WeTV poster from URL",
+    "shemaroo": "Scrape ShemarooMe poster from URL",
+    "bms": "Scrape BookMyShow poster from URL",
+    "plex": "Scrape Plex TV poster from URL",
+    "adda": "Scrape Addatimes poster from URL",
+    "stage": "Scrape Stage poster from URL",
+    "netflix": "Scrape Netflix poster from URL",
+    "youtube": "Scrape YouTube thumbnail from URL",
+    "instagram": "Scrape Instagram thumbnail from URL",
+    "facebook": "Scrape Facebook thumbnail from URL",
+    "tiktok": "Scrape TikTok thumbnail from URL",
+    "ping": "Pong",
+    "authorize": "Authorize a user or chat[Admins Only]",
+    "unauthorize": "Unauthorize a user or chat[Admins Only]",
+    "log": "Get bot logs[Admins Only]",
+    "restart": "Restart the bot[Admins Only]",
+    "broadcast": "Broadcast message to users[Admins Only]",
+    "start": "Start the bot",
+    "overlap": "Overlay logo on poster",
+}
+
+
+def _get_bot_commands():
+    return [BotCommand(cmd, desc) for cmd, desc in CMD_HELP.items()]
