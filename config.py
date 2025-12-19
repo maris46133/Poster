@@ -5,12 +5,12 @@ load_dotenv("../config.env", override=True)
 load_dotenv("config.env", override=True) 
 
 class Config:
-    API_ID = int(os.environ.get("API_ID", 0))
-    API_HASH = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-    DATABASE_URL = os.environ.get("DATABASE_URL", "")
-    DATABASE_NAME = os.environ.get("DATABASE_NAME", "ebotz")
-    OWNER_ID = int(os.environ.get("OWNER_ID", 0))
+    API_ID = int(os.environ.get("API_ID", 21897798))
+    API_HASH = os.environ.get("API_HASH", "6dc4b956d136953968a5b088b897c789")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7836496789:AAGRpY6NonjJoi_xybcf8BFV9hpLrJ-Ri4g")
+    DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://ukgames:karthi123@cluster0.6qmaf.mongodb.net/?retryWrites=true&w=majority&appName=scrap")
+    DATABASE_NAME = os.environ.get("DATABASE_NAME", "ebotzz")
+    OWNER_ID = int(os.environ.get("OWNER_ID", 1815536722))
     SUDO_USERS = (
         list(map(int, os.environ.get("SUDO_USERS", "").split()))
         if os.environ.get("SUDO_USERS")
@@ -33,7 +33,7 @@ class Config:
     # TMDB Token is optional bot will use third party proxy (https://tmdbapi.the-zake.workers.dev) if u don't want to set TMDB token 
     TMDB_ACCESS_TOKEN = os.environ.get("TMDB_ACCESS_TOKEN", "")
     
-    UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/XalFH/Poster-Scraper-Bot")
+    UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/maris46133/Poster")
     UPSTREAM_BRANCH = os.environ.get("UPSTREAM_BRANCH", "main")
 
     OTT_TEMPLATE = """
@@ -110,7 +110,7 @@ class Config:
 <b>✺ Original URL:</b>
 <code>{original_url}</code>
 
-<blockquote>Bot By ➤ @NxTalks</blockquote>
+<blockquote>Bot By ➤ @STAR_BOTZ</blockquote>
 """.strip()
 
     POSER_TEMPLATE = """
@@ -128,5 +128,5 @@ class Config:
 {posters}
 </blockquote>
 
-<blockquote>Bot By ➤ @NxTalks</blockquote>
+<blockquote>Bot By ➤ @STAR_BOTZ</blockquote>
 """.strip()
